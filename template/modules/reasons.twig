@@ -1,5 +1,9 @@
 <section class="dadboddestroyer-reasons-hero">
     <div class="container">
         <h2>{{title}}</h2>
+        {% for item in acf.verified_buyer %}
+            <p>{{item.review}}</p>
+            <p>{{item.name}}</p>
+        {% endfor %}
     </div>
 </section>
