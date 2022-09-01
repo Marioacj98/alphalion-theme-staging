@@ -2,15 +2,7 @@
 Theme Name: alphalion-theme-staging
 Theme URI:
 Description: Alphalion theme
-Version: 1.0.33
+Version: 1.0.34
 Author: Alphalion
 Author URI: https://www.alphalion.com/
 */
-
- /*Dadbod*/
- .footer .text-center.privacy a, .footer .text-center.privacy a:hover, .footer p.text-center.privacy {
-    font-family: 'rubik Regular';
-    font-size: 17px;
-    font-weight: 800;
-    color: #5c5c5c;
-}
