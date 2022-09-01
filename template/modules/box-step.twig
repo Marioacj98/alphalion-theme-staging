@@ -1,0 +1,63 @@
+<div class="container section-tab" id="{{ item.title_step|replace({' ': ''})|lower }}-nav-tab" role="tablist">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="buttons" data-aos="fade-left">
+                {% if item.tabs.button_text %}
+                    <a href="" class="btn btn-outline-white active" id="{{ item.title_step|replace({' ': ''})|lower }}-nav-{{1}}-tab" data-bs-toggle="tab" data-bs-target="#{{ item.title_step|replace({' ': ''})|lower }}-nav-{{1}}" type="button" role="tab" aria-controls="{{ item.title_step|replace({' ': ''})|lower }}-nav-{{1}}" aria-selected="true">{{ item.tabs.button_text }}</a>
+                {% endif %}
+
+                {% if item.tabs.button_text_2 %}
+                    <a href="" class="btn btn-outline-white" id="{{ item.title_step|replace({' ': ''})|lower }}-nav-{{2}}-tab" data-bs-toggle="tab" data-bs-target="#{{ item.title_step|replace({' ': ''})|lower }}-nav-{{2}}" type="button" role="tab" aria-controls="{{ item.title_step|replace({' ': ''})|lower }}-nav-{{2}}" aria-selected="false">{{ item.tabs.button_text_2 }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="tab-content" id="{{ item.title_step|replace({' ': ''})|lower }}-nav-tabContent">
+        {% if item.tabs.button_text %}
+            <div class="tab-pane fade show active" id="{{ item.title_step|replace({' ': ''})|lower }}-nav-1" role="tabpanel" aria-labelledby="{{ item.title_step|replace({' ': ''})|lower }}-nav-1-tab">
+                <div class="row justify-content-center align-items-center">
+                    {% if item.tabs.title %}
+                        <div class="col-lg-6" data-aos="fade-left" >
+                            <div class="contenedor">
+                                <div class="text">
+                                    <h2>{{ item.tabs.title }}</h2>
+                                    <div class="content-image d-block d-lg-none">
+                                        <img src="{{ item.tabs.image }}" alt="{{ item.tabs.title }}">
+                                    </div>
+                                    {{ item.tabs.content|raw }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {% if item.tabs.image %}
+                        <div class="col-lg-6 d-none d-lg-block" data-aos="fade-right" >
+                            <div class="content-image">
+                                <img src="{{ item.tabs.image }}" alt="{{ item.tabs.title }}">
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+
+        {% if item.tabs.button_text_2 %}
+            <div class="tab-pane fade show" id="{{ item.title_step|replace({' ': ''})|lower }}-nav-2" role="tabpanel" aria-labelledby="{{ item.title_step|replace({' ': ''})|lower }}-nav-2-tab">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-lg-6">
+                        <div class="single-slider">
+                            {% for key, val in item.tabs.ingredients %}
+                                <div class="content-image-ingredients">
+                                    {% if val.image_ingredient.caption %}
+                                        <h2>{{val.image_ingredient.caption}}</h2>
+                                    {% endif %}
+                                    <img src="{{val.image_ingredient.url}}" alt="image-ingredient">
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>

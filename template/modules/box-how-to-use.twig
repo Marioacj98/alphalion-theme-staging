@@ -1,0 +1,24 @@
+<section class="section single-section section-how-to-use bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-11 m-auto">
+                <div class="title text-center" data-aos="fade-up" >
+                    <h2>{{acf.block_title}}</h2>
+                </div>
+                <div class="contenedor">
+                    {% for key, val in acf.sections %}
+                        <ol data-aos="fade-up">
+                            <h3>{{val.title}}</h3>
+                            {% for element in val.items %}
+                                <li>
+                                    <h4>{{ element.title }}</h4>
+                                    <p>{{ element.content }}</p>
+                                </li>
+                            {% endfor %}
+                        </ol>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

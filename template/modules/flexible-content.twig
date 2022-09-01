@@ -1,0 +1,8 @@
+{% if modules %}
+    
+    {% for module in modules.modules %}
+        {%  set module_name = module.acf_fc_layout|replace({'.': '/'})~'.twig' %}
+        {% include module_name with {"acf": module} %}
+    {% endfor %}
+{% endif %}
+
