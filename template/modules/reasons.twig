@@ -2,8 +2,7 @@
     <div class="container">
         <h2>{{title}}</h2>
         {% for item in acf.verified_buyer %}
-            <p>{{item.review}}</p>
-            <p>{{item.name|raw}}</p>
+            <p class="d-none d-lg-block">{{item.review}} <span class="d-block">- {{item.name|raw}}</span></p>
         {% endfor %}
     </div>
 </section>
